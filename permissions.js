@@ -1,4 +1,3 @@
-
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const Discord = require('discord.js');
 const { Permissions } = require('discord.js');
@@ -14,11 +13,12 @@ module.exports = {
         var kickmem = interaction.guild.me.permissions.has("KICK_MEMBERS")
         const perm = new Discord.MessageEmbed()
             .setAuthor({ name: `4our Bot's Permssions`, iconURL: interaction.member.displayAvatarURL()})
+            .setDescription('It\'s recommended to make sure I have all of the listed permissions below')
             .setColor('BLUE')
-            .addField('`\🪚\` Admin', `${admin}`)
-            .addField('`\🔧\` Manage Server', `${manserver}`, true)
-            .addField('`\🔨\` Ban Members', `${banmem}`, true)
-            .addField('`\🥾\` Kick Members', `${kickmem}`, true)
+            .addField('Admin', `${admin}`)
+            .addField('Manage Server', `${manserver}`, true)
+            .addField('Ban Members', `${banmem}`, true)
+            .addField('Kick Members', `${kickmem}`, true)
             await interaction.reply({ embeds: [perm] })
 	},
 };
