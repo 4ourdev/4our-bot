@@ -1,4 +1,3 @@
-
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const Discord = require('discord.js');
 const { Permissions } = require('discord.js');
@@ -13,11 +12,11 @@ module.exports = {
         const botCount = interaction.guild.members.cache.filter(member => member.user.bot).size;
   
         const embed = new Discord.MessageEmbed()
-          .setAuthor({ name: `Member Count for ${interaction.guild}`, iconURL:`${interaction.guild.iconURL()}` })
+          .setAuthor({ name: `Member Count for ${interaction.guild}`, iconURL: interaction.member.displayAvatarURL() })
           .setColor("BLUE")
-        .addField('Total', `${totalCount}`)
-        .addField('Members', `${memberCount}`)
-        .addField('Bots', `${botCount}`)
+        .addField('Members', `${memberCount}`, true)
+        .addField('Bots', `${botCount}`, true)
+        .addField('Total', `${totalCount}`, true)
   
         await interaction.reply({embeds: [embed]})
   
