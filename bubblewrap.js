@@ -1,4 +1,3 @@
-
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const Discord = require('discord.js');
 const { Permissions } = require('discord.js');
@@ -12,6 +11,7 @@ module.exports = {
             .setAuthor({ name: `Pop`, iconURL: interaction.member.displayAvatarURL() })
             .setColor('BLUE')
             .setDescription('||pop|| || pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| \n ||pop|| || pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| \n ||pop|| || pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| \n ||pop|| || pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| \n ||pop|| || pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| \n ||pop|| || pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| \n ||pop|| || pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| \n ||pop|| || pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| \n ||pop|| || pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| ||pop|| \n')
+			.setFooter('! This message will be deleted after 60s')
         const replyMessage = await interaction.reply({ embeds: [bubble] })
         setTimeout(() => interaction.deleteReply(), 60000);
 	},
